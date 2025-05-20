@@ -25,6 +25,8 @@ public interface ProductoRepository {
         return null;
     }
 
+
+
     //Bucar por nombre de producto
     public Producto buscarNombre(String nombre_producto){
         for(Producto producto:listaProducto){
