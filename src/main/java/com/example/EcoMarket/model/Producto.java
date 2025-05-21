@@ -14,21 +14,21 @@ public class Producto {
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Integer id;
 
-        @Column(unique=true, length = 15,nullable = false)
+        @Column(unique=true, length = 30,nullable = false)
         private String nombre_producto;
 
-        @Column(unique=true, length = 25,nullable = false)
+        @Column(unique=true, length = 40,nullable = false)
         private String descripcion;
 
-        @Column(unique=true, length = 10,nullable = false)
+        @Column(unique=true, length = 40,nullable = false)
         private String categoria;
 
-        @Column(unique=true, length = 10,nullable = false)
+        @Column(unique=true, length = 20,nullable = false)
         private int cantidad;
 
-        @Column(unique=true, length = 10,nullable = false)
+        @Column(unique=true, length = 15,nullable = false)
         private double precio;
 
-        @Column(unique=true, length = 10,nullable = false)
+        @Column(unique=true, length = 15,nullable = false)
         private int stock;
 }
