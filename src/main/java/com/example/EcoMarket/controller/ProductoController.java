@@ -1,6 +1,7 @@
 package com.example.EcoMarket.controller;
 
 import com.example.EcoMarket.model.Producto;
+import com.example.EcoMarket.repository.ProductoRepository;
 import com.example.EcoMarket.services.ProductoServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,9 @@ import java.util.List;
 public class ProductoController {
     @Autowired
     private ProductoServices productoServices;
+
+    @Autowired
+    private ProductoRepository productoRepository;
 
     @GetMapping
     public ResponseEntity<List<Producto>> listar() {
@@ -46,7 +50,7 @@ public class ProductoController {
 
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     public ResponseEntity<Producto> actualizar(@PathVariable Integer id, @RequestBody Producto producto) {
         try{
             Producto pro = productoServices.findbyId(id);
@@ -68,7 +72,6 @@ public class ProductoController {
 
 
     }
-
     @DeleteMapping("/{id}")
     public ResponseEntity<Producto> eliminar(@PathVariable Integer id) {
         try{
@@ -78,7 +81,15 @@ public class ProductoController {
         }catch (Exception e){
             return ResponseEntity.notFound().build();
         }
+    }
 
-
+    //Metodos de los filtros
+    @GetMapping("/buscarPorNombre")
+    public List<Producto> buscarPorNombre(@RequestParam String nombre_producto){
+        return productoRepository.findByNombre_producto(nombre_producto);
+    }
+    @GetMapping("/buscarPorCategoria")
+    public List<Producto> buscarPorCategoria(@RequestParam String categoria){
+        return productoRepository.findByCategoria(categoria);
     }
 }
