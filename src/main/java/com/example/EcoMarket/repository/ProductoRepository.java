@@ -22,7 +22,7 @@ public interface ProductoRepository extends JpaRepository<Producto, Long> {
     @Query("SELECT p FROM Producto p WHERE p.nombre_producto=:nombre_producto")
     List<Producto> findByNombre_producto(String nombre_producto);
 
-    @Query(value="SELECT * FROM Producto WHERE id_producto=: id_prducto", nativeQuery = true)
+    @Query(value="SELECT * FROM Producto WHERE id=: id_prducto", nativeQuery = true)
     Producto findById_producto(@Param("id_producto")int id_producto);
 
 
