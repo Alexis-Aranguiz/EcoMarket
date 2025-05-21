@@ -25,4 +25,6 @@ public interface ProductoRepository extends JpaRepository<Producto, Long> {
     @Query(value="SELECT * FROM Producto WHERE id_producto=: id_prducto", nativeQuery = true)
     Producto findById_producto(@Param("id_producto")int id_producto);
 
+
+
 }
