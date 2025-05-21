@@ -1,19 +1,34 @@
 package com.example.EcoMarket.model;
-
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 
 public class Producto {
-    private int id_producto;
-    private String nombre_producto;
-    private String descripcion;
-    private String categoria;
-    private int cantidad;
-    private double precio;
-    private int stock;
+    @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Integer id_producto;
+
+        @Column(unique=true, length = 15,nullable = false)
+        private String nombre_producto;
+
+        @Column(unique=true, length = 25,nullable = false)
+        private String descripcion;
+
+        @Column(unique=true, length = 10,nullable = false)
+        private String categoria;
+
+        @Column(unique=true, length = 10,nullable = false)
+        private int cantidad;
+
+        @Column(unique=true, length = 10,nullable = false)
+        private double precio;
+
+        @Column(unique=true, length = 10,nullable = false)
+        private int stock;
 }
