@@ -15,7 +15,7 @@ public class ProductoServices {
     @Autowired
     private ProductoRepository productoRepository;
 
-    public List<Producto> findAll() {return productoRepository.findAll;}
+    public List<Producto> findAll() {return productoRepository.findAll();}
 
     public Producto findbyId(long id){return productoRepository.findById(id).get();}
 
