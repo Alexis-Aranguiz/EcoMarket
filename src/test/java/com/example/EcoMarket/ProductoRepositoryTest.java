@@ -32,15 +32,15 @@ class ProductoRepositoryTest {
                 new Producto(2, "Jabón Artesanal de Lavanda", "Jabón biodegradable hecho a mano con esencia natural de lavanda", "Cuidado Personal", 80, 4500.0, 100)
         );
 
-        when(productoRepository.findByNombre_producto("Aceite de Coco Orgánico")).thenReturn(productosMock);
+        when(productoRepository.findByNombreProducto("Aceite de Coco Orgánico")).thenReturn(productosMock);
 
-        List<Producto> resultado = productoRepository.findByNombre_producto("Aceite de Coco Orgánico");
+        List<Producto> resultado = productoRepository.findByNombreProducto("Aceite de Coco Orgánico");
 
         assertNotNull(resultado);
         assertFalse(resultado.isEmpty());
         assertEquals("Aceite de Coco Orgánico", resultado.get(0).getNombre_producto());
 
-        verify(productoRepository, times(1)).findByNombre_producto("Aceite de Coco Orgánico");
+        verify(productoRepository, times(1)).findByNombreProducto("Aceite de Coco Orgánico");
     }
 
     @Test
