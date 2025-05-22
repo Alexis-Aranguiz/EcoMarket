@@ -11,7 +11,7 @@ import java.util.List;
 
 public interface ProductoRepository extends JpaRepository<Producto, Long> {
     //Filtros
-    List<Producto> findByNombre_producto(String nombre_producto);
+    List<Producto> findByNombreProducto(String nombreProducto);
     List<Producto> findByCategoria(String categoria);
 
     @Query(value="SELECT * FROM Producto WHERE id=: id", nativeQuery = true)

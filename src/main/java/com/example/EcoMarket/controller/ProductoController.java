@@ -55,7 +55,7 @@ public class ProductoController {
         try{
             Producto pro = productoServices.findbyId(id);
             pro.setId(id);
-            pro.setNombre_producto(producto.getNombre_producto());
+            pro.setNombreProducto(producto.getNombreProducto());
             pro.setDescripcion(producto.getDescripcion());
             pro.setCategoria(producto.getCategoria());
             pro.setCantidad(producto.getCantidad());
@@ -85,8 +85,8 @@ public class ProductoController {
 
     //Metodos de los filtros
     @GetMapping("/buscarPorNombre")
-    public List<Producto> buscarPorNombre(@RequestParam String nombre_producto){
-        return productoRepository.findByNombre_producto(nombre_producto);
+    public List<Producto> buscarPorNombre(@RequestParam String nombreProducto){
+        return productoRepository.findByNombreProducto(nombreProducto);
     }
     @GetMapping("/buscarPorCategoria")
     public List<Producto> buscarPorCategoria(@RequestParam String categoria){
