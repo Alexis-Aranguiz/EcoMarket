@@ -92,4 +92,13 @@ public class ProductoController {
     public List<Producto> buscarPorCategoria(@RequestParam String categoria){
         return productoRepository.findByCategoria(categoria);
     }
+    @GetMapping("/buscarPorPrecio")
+    public List<Producto> buscarPorPrecio(@RequestParam double precio) {
+        return productoRepository.findByPrecio(precio);
+    }
+
+
+
+
+
 }

@@ -13,6 +13,8 @@ public interface ProductoRepository extends JpaRepository<Producto, Long> {
     //Filtros
     List<Producto> findByNombreProducto(String nombreProducto);
     List<Producto> findByCategoria(String categoria);
+    List<Producto> findByPrecio(double precio);
+
 
     @Query(value="SELECT * FROM Producto WHERE id=: id", nativeQuery = true)
     Producto findById_producto(@Param("id")int id);

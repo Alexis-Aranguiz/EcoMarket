@@ -52,11 +52,11 @@ class ProductoServicesTest {
     @Test
     void testSave() {
         Producto producto = new Producto();
-        producto.setNombre_producto("Mouse Gamer");
+        producto.setNombreProducto("Mouse Gamer");
         when(productoRepository.save(producto)).thenReturn(producto);
 
         Producto guardado = productoServices.save(producto);
-        assertEquals("Mouse Gamer", guardado.getNombre_producto());
+        assertEquals("Mouse Gamer", guardado.getNombreProducto());
     }
 
     @Test

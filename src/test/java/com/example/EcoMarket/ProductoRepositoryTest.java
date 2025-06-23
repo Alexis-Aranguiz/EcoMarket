@@ -26,7 +26,7 @@ class ProductoRepositoryTest {
     }
 
     @Test
-    void testFindByNombre_producto() {
+    void testFindByNombreProducto() {
         List<Producto> productosMock = List.of(
                 new Producto(1, "Aceite de Coco Orgánico", "Aceite de coco prensado en frío, 100% natural", "Aceites Naturales", 150, 8000.0, 200),
                 new Producto(2, "Jabón Artesanal de Lavanda", "Jabón biodegradable hecho a mano con esencia natural de lavanda", "Cuidado Personal", 80, 4500.0, 100)
@@ -38,7 +38,7 @@ class ProductoRepositoryTest {
 
         assertNotNull(resultado);
         assertFalse(resultado.isEmpty());
-        assertEquals("Aceite de Coco Orgánico", resultado.get(0).getNombre_producto());
+        assertEquals("Aceite de Coco Orgánico", resultado.get(0).getNombreProducto());
 
         verify(productoRepository, times(1)).findByNombreProducto("Aceite de Coco Orgánico");
     }
